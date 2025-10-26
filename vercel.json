@@ -11,7 +11,7 @@
   ],
   "headers": [
     {
-      "source": "/(.*\\.(pdf|jpg|jpeg|png|gif|svg|ico|webp))",
+      "source": "/public/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
