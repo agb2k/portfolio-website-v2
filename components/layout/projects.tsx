@@ -19,20 +19,46 @@ import { useState } from "react";
 function ProjectCard({ project }: { project: Project }) {
   const [logoError, setLogoError] = useState(false);
 
+  // Generate initials from company name as fallback
+  const getInitials = (company: string) => {
+    return company
+      .split(' ')
+      .map(word => word[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2);
+  };
+
   const cardContent = (
     <>
       {/* Company logo and project header */}
       <div className="flex items-start gap-3 mb-3">
-        {project.logo && !logoError && (
-          <div className="flex-shrink-0 w-8 h-8 relative">
-            <Image
-              src={project.logo}
-              alt={`${project.company} logo`}
-              fill
-              className="rounded object-contain"
-              onError={() => setLogoError(true)}
-              sizes="32px"
-            />
+        {project.logo ? (
+          !logoError ? (
+            <div className="flex-shrink-0 w-8 h-8 relative">
+              <Image
+                src={project.logo}
+                alt={`${project.company} logo`}
+                fill
+                className="rounded object-contain"
+                onError={() => setLogoError(true)}
+                onLoadingComplete={() => {}}
+                sizes="32px"
+                unoptimized
+              />
+            </div>
+          ) : (
+            <div className="flex-shrink-0 w-8 h-8 rounded bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+              <span className="text-[10px] font-semibold text-gray-600 dark:text-gray-300">
+                {getInitials(project.company)}
+              </span>
+            </div>
+          )
+        ) : (
+          <div className="flex-shrink-0 w-8 h-8 rounded bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+            <span className="text-[10px] font-semibold text-gray-600 dark:text-gray-300">
+              {getInitials(project.company)}
+            </span>
           </div>
         )}
         <div className="flex-1">

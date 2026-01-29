@@ -60,7 +60,7 @@ export const EXPERIENCE_DATA = [
     role: "Software Engineer (Backend)",
     location: "Kuala Lumpur, Malaysia",
     period: "Feb 2023 – Present",
-    logo: "https://logo.clearbit.com/moneylion.com",
+    logo: "/moneylion_logo.png",
     bullets: [
       "Led development of investing/crypto features, boosting user engagement by 80% and transaction volume by 40%.",
       "Architected and implemented revenue-critical microservices using Kafka & AWS, driving 15–20% revenue growth.",
@@ -75,7 +75,7 @@ export const EXPERIENCE_DATA = [
     role: "Software Engineer (Backend & ML)",
     location: "Kuala Lumpur, Malaysia",
     period: "Aug 2022 – Jan 2023",
-    logo: "https://logo.clearbit.com/totalitglobal.com",
+    logo: "/totalitglobal_logo.png",
     bullets: [
       "Developed production-grade services using FastAPI, Django REST Framework, and NestJS for enterprise clients.",
       "Built ML-powered resume parser with spaCy and scikit-learn, improving parsing accuracy by 20% and reducing manual processing time.",
@@ -125,7 +125,7 @@ export const PROJECTS_DATA = [
     tech: ["Java", "Spring Boot", "Kafka", "AWS", "Microservices", "Event-Driven Architecture"],
     link: undefined, // Professional work - no public repo
     company: "MoneyLion",
-    logo: "https://logo.clearbit.com/moneylion.com",
+    logo: "/moneylion_logo.png",
   },
   {
     name: "Bull vs Bear Gamification Platform",
@@ -133,7 +133,7 @@ export const PROJECTS_DATA = [
     tech: ["Java", "Spring Boot", "Redis", "WebSocket", "Real-time Data", "Gamification"],
     link: undefined, // Professional work - no public repo
     company: "MoneyLion",
-    logo: "https://logo.clearbit.com/moneylion.com",
+    logo: "/moneylion_logo.png",
   },
   {
     name: "Event-Driven Deposits & Withdrawals System",
@@ -141,7 +141,7 @@ export const PROJECTS_DATA = [
     tech: ["AWS SQS", "Event-Driven Architecture", "Java", "Spring Boot", "PostgreSQL", "Redis"],
     link: undefined, // Professional work - no public repo
     company: "MoneyLion",
-    logo: "https://logo.clearbit.com/moneylion.com",
+    logo: "/moneylion_logo.png",
   },
   {
     name: "ML-Powered ATS Resume Scanner",
@@ -149,7 +149,7 @@ export const PROJECTS_DATA = [
     tech: ["Python", "spaCy", "Scikit-learn", "FastAPI", "Machine Learning", "NLP"],
     link: undefined, // Professional work - no public repo
     company: "Total IT Global",
-    logo: "https://logo.clearbit.com/totalitglobal.com",
+    logo: "/totalitglobal_logo.png",
   },
   {
     name: "RecSys Diversification Research (FYP)",

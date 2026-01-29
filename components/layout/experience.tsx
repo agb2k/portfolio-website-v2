@@ -14,20 +14,46 @@ function ExperienceItem({ experience: exp }: { experience: Experience }) {
   // State to handle logo loading errors gracefully
   const [logoError, setLogoError] = useState(false);
 
+  // Generate initials from company name as fallback
+  const getInitials = (company: string) => {
+    return company
+      .split(' ')
+      .map(word => word[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2);
+  };
+
   return (
     <div className="flex gap-4">
       {/* Company logo with error handling */}
-      {exp.logo && !logoError && (
-        <div className="flex-shrink-0 w-12 h-12 relative">
-          <Image
-            src={exp.logo}
-            alt={`${exp.company} logo`}
-            fill
-            className="rounded-lg object-contain"
-            onError={() => setLogoError(true)}
-            sizes="48px"
-            style={{ maxWidth: '48px', maxHeight: '48px' }}
-          />
+      {exp.logo ? (
+        !logoError ? (
+          <div className="flex-shrink-0 w-12 h-12 relative">
+            <Image
+              src={exp.logo}
+              alt={`${exp.company} logo`}
+              fill
+              className="rounded-lg object-contain"
+              onError={() => setLogoError(true)}
+              onLoadingComplete={() => {}}
+              sizes="48px"
+              style={{ maxWidth: '48px', maxHeight: '48px' }}
+              unoptimized
+            />
+          </div>
+        ) : (
+          <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+            <span className="text-xs font-semibold text-gray-600 dark:text-gray-300">
+              {getInitials(exp.company)}
+            </span>
+          </div>
+        )
+      ) : (
+        <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+          <span className="text-xs font-semibold text-gray-600 dark:text-gray-300">
+            {getInitials(exp.company)}
+          </span>
         </div>
       )}
       
